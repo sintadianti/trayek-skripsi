@@ -1,17 +1,17 @@
 <?php 
+require 'function/function.php';
   $page=isset($_GET["page"])?$_GET["page"]:'dashboard';
  ?>
 <!DOCTYPE html>
 <html lang="en">
 
-  
 <!-- Mirrored from big-bang-studio.com/cosmos/pages-blank.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 10 Jan 2019 12:55:36 GMT -->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="">
-    <title>Cosmos</title>
+    <title>Angkot Garut</title>
     <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700" rel="stylesheet">
@@ -58,74 +58,51 @@
         <div class="sidebar-backdrop"></div>
         <div class="custom-scrollbar">
           <ul class="sidebar-menu">
-            <li class="menu-title">Main</li>
+            <li class="menu-title">Admin</li>
             <li>
-              <a href="page-layouts.html">
+              <a href="index.php?page=halaman_utama">
                 <span class="menu-icon">
                   <i class="zmdi zmdi-home"></i>  
                 </span>
                 <span class="menu-text">Dashboards</span>
               </a>
             </li>
-            <li>
-              <a href="index.php?page=peta">
+            <li class="">
+              <a href="index.php?page=peta&id_trayek=all">
                 <span class="menu-icon">
-                  <i class="zmdi zmdi-view-web"></i>
+                  <i class="zmdi zmdi-pin"></i>
                 </span>
                 <span class="menu-text">Peta Trayek Angkot</span>
               </a>
             </li>  
-            <li class="with-sub">
-              <a href="index.php?page=trayek">
+            <li class="">
+              <a href="index.php?page=kelola_trayek">
                 <span class="menu-icon">
-                  <i class="zmdi zmdi-dot-circle-alt"></i>
-                </span>
-                <span class="menu-text">Informasi Trayek</span>
-              </a>
-              <ul class="sidebar-submenu collapse">
-                <li class="menu-subtitle">Forms</li>
-                <li><a href="forms-form-controls.html">Trayek 1</a></li>
-                <li><a href="forms-form-controls.html">Trayek 2</a></li>
-                <li><a href="forms-form-controls.html">Trayek 3</a></li>
-                <li><a href="forms-form-controls.html">Trayek 4</a></li>
-                <li><a href="forms-form-controls.html">Trayek 5</a></li>
-                <li><a href="forms-form-controls.html">Trayek 6</a></li>
-                <li><a href="forms-form-controls.html">Trayek 7</a></li>
-                <li><a href="forms-form-controls.html">Trayek 8</a></li>
-                <li><a href="forms-form-controls.html">Trayek 9</a></li>
-                <li><a href="forms-form-controls.html">Trayek 10</a></li>
-                <li><a href="forms-form-controls.html">Trayek 11</a></li>
-                <li><a href="forms-form-controls.html">Trayek 12</a></li>
-                <li><a href="forms-form-controls.html">Trayek 13</a></li>
-                <li><a href="forms-form-controls.html">Trayek 14</a></li>
-                <li><a href="forms-form-controls.html">Trayek 15</a></li>
-                <li><a href="forms-form-controls.html">Trayek 16</a></li>
-              </ul>
-            </li>
-            <li class="with-sub">
-              <a href="index.php?page=angkutan">
-                <span class="menu-icon">
-                  <i class="zmdi zmdi-border-all"></i>
+                  <i class="zmdi zmdi-directions-car"></i>
                 </span>
                 <span class="menu-text">Informasi Angkot</span>
               </a>
-              <ul class="sidebar-submenu collapse">
-                <li class="menu-subtitle">Tables</li>
-                <li><a href="tables-basic.html">Basic tables</a></li>
-              </ul>
             </li>
             <li>
-              <a href="index.php?page=aplikasi">
+              <a href="index.php?page=kelola_fasos">
                 <span class="menu-icon">
-                  <i class="zmdi zmdi-view-web"></i>
+                  <i class="zmdi zmdi-store"></i>
                 </span>
-                <span class="menu-text">Informasi Aplikasi</span>
+                <span class="menu-text">Informasi Fasilitas Sosial</span>
               </a>
             </li> 
             <li>
-              <a href="index.php?page=keluar">
+              <a href="index.php?page=admin">
                 <span class="menu-icon">
-                  <i class="zmdi zmdi-view-web"></i>
+                  <i class="zmdi zmdi-store"></i>
+                </span>
+                <span class="menu-text">Kelola Admin</span>
+              </a>
+            </li> 
+            <li>
+              <a href="">
+                <span class="menu-icon">
+                  <i class="zmdi zmdi-arrow-left"></i>
                 </span>
                 <span class="menu-text">Keluar</span>
               </a>

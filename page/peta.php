@@ -1,175 +1,67 @@
-<h2>Peta</h2>
+<?php 
+if($_GET['id_trayek']=='all'){
+        $angkot=query("SELECT * FROM angkot");
+}else{
+    $data=$_GET['id_trayek'];
+    $angkot=query("SELECT * FROM angkot WHERE id_trayek=$data");  
+}
+
+$angkot_aja=query("SELECT * FROM angkot");
+$fasos=query("SELECT * FROM fasos ");
+var_dump($fasos);
+
+?>
+
+
+<center><h2>Peta Trayek Angkutan Kota (AngKot) Kabupaten Garut</h2></center>
+<div class="row">
+    <div class="col-lg-2 ">
+        <a href="index.php?page=peta&id_trayek=all" type="button" class="btn btn-primary btn-labeled">SEMUA</a>
+    </div>
+    <?php foreach ($angkot_aja as $data): ?>
+    <div class="col-lg-2 ">
+        <a href="index.php?page=peta&id_trayek=<?=$data['id_trayek'] ?>" type="button" class="btn btn-primary btn-labeled"><?=$data['trayek'] ?></a>
+    </div>
+    <?php endforeach ?>
+</div>
 <div id="map" style="width: 100%; height: 50em; display: block; position:relative"></div>
 
 <script>
-    var map = L.map('map').setView([-7.20932,107.91746], 20);
+    var map = L.map('map').setView([-7.20932,107.91746], 13);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
+    
+
+        <?php 
+                    foreach ($fasos as $row=> $fas):
+                ?>
+                    L.marker([<?= $fas['longtitude']?>, <?= $fas['latitude']?>]).addTo(map)
+                    .bindPopup("Tempat : <b><?=$fas['nama_tempat']?></b> </br> Desk: <?= $fas['deskripsi']?>")
+                    .openPopup();
+                <?php
+                    endforeach;
+                ?>
     var pp=[
-        [
-            new L.LatLng(-7.20932,107.91746) ,
-            new L.LatLng(-7.21145,107.91810) ,
-            new L.LatLng(-7.21320,107.91928) ,
-            new L.LatLng(-7.21599,107.92107) ,
-            new L.LatLng(-7.22031,107.92112) ,
-            new L.LatLng(-7.22476,107.91812) ,
-            new L.LatLng(-7.22635,107.91565) ,
-            new L.LatLng(-7.22678,107.91469) ,
-            new L.LatLng(-7.22733,107.91390) ,
-            new L.LatLng(-7.22736,107.91222) ,
-            new L.LatLng(-7.22821,107.91130) ,
-            new L.LatLng(-7.22855,107.91121) ,
-            new L.LatLng(-7.22879,107.91091) ,
-            new L.LatLng(-7.22909,107.91001) ,
-            new L.LatLng(-7.22926,107.90850) ,
-            new L.LatLng(-7.22881,107.90679) ,
-            new L.LatLng(-7.22052,107.90630) ,
-            new L.LatLng(-7.21880,107.90618) ,
-            new L.LatLng(-7.21867,107.90462) ,
-            new L.LatLng(-7.22046,107.90444) ,
-            new L.LatLng(-7.22039,107.90351) ,
-            new L.LatLng(-7.21985,107.90145) ,
-            new L.LatLng(-7.21772,107.90165) ,
-            new L.LatLng(-7.21680,107.90173) ,
-            new L.LatLng(-7.21678,107.90192) ,
-            new L.LatLng(-7.21580,107.90199) ,
-            new L.LatLng(-7.21483,107.90202) ,
-            new L.LatLng(-7.21397,107.90206) ,
-            new L.LatLng(-7.21344,107.90210) ,
-            new L.LatLng(-7.21314,107.90210) ,
-            new L.LatLng(-7.21236,107.90214) ,
-            new L.LatLng(-7.21178,107.90215) ,
-            new L.LatLng(-7.21170,107.90205) ,
-            new L.LatLng(-7.21161,107.90202) ,
-            new L.LatLng(-7.21151,107.90207) ,
-            new L.LatLng(-7.21148,107.90215) ,
-            new L.LatLng(-7.21067,107.90220) ,
-            new L.LatLng(-7.20981,107.90224) ,
-            new L.LatLng(-7.20932,107.90224) ,
-            new L.LatLng(-7.20875,107.90231) ,
-            new L.LatLng(-7.20798,107.90268) ,
-            new L.LatLng(-7.20743,107.90288) ,
-            new L.LatLng(-7.20721,107.90291) ,
-            new L.LatLng(-7.20714,107.90282) ,
-            new L.LatLng(-7.20703,107.90283) ,
-            new L.LatLng(-7.20696,107.90288) ,
-            new L.LatLng(-7.20700,107.90298) ,
-            new L.LatLng(-7.20704,107.90303) ,
-            new L.LatLng(-7.20680,107.90365) ,
-            new L.LatLng(-7.20666,107.90415) ,
-            new L.LatLng(-7.20651,107.90473) ,
-            new L.LatLng(-7.20638,107.90494) ,
-            new L.LatLng(-7.20615,107.90525) ,
-            new L.LatLng(-7.20584,107.90539) ,
-            new L.LatLng(-7.20483,107.90538) ,
-            new L.LatLng(-7.20418,107.90533) ,
-            new L.LatLng(-7.20366,107.90526) ,
-            new L.LatLng(-7.20280,107.90523) ,
-            new L.LatLng(-7.20288,107.90594) ,
-            new L.LatLng(-7.20283,107.90613) ,
-            new L.LatLng(-7.20202,107.90624) ,
-            new L.LatLng(-7.20176,107.90626) ,
-            new L.LatLng(-7.20160,107.90620) ,
-            new L.LatLng(-7.20144,107.90601) ,
-            new L.LatLng(-7.20136,107.90588) ,
-            new L.LatLng(-7.20126,107.90535) ,
-            new L.LatLng(-7.20053,107.90544) ,
-            new L.LatLng(-7.19987,107.90555) ,
-            new L.LatLng(-7.20001,107.90621) ,
-            new L.LatLng(-7.20018,107.90622) ,
-            new L.LatLng(-7.20029,107.90626) ,
-       ],[
-            new L.LatLng(-7.20028,107.90626), 
-            new L.LatLng(-7.20018,107.90621), 
-            new L.LatLng(-7.20002,107.90621), 
-            new L.LatLng(-7.19986,107.90555), 
-            new L.LatLng(-7.19962,107.90560), 
-            new L.LatLng(-7.19941,107.90562), 
-            new L.LatLng(-7.19910,107.90564), 
-            new L.LatLng(-7.19896,107.90488), 
-            new L.LatLng(-7.19882,107.90428), 
-            new L.LatLng(-7.19879,107.90413), 
-            new L.LatLng(-7.19871,107.90312), 
-            new L.LatLng(-7.19970,107.90294), 
-            new L.LatLng(-7.20063,107.90278), 
-            new L.LatLng(-7.20108,107.90289), 
-            new L.LatLng(-7.20157,107.90304), 
-            new L.LatLng(-7.20229,107.90327), 
-            new L.LatLng(-7.20272,107.90347), 
-            new L.LatLng(-7.20297,107.90351), 
-            new L.LatLng(-7.20364,107.90342), 
-            new L.LatLng(-7.20415,107.90349), 
-            new L.LatLng(-7.20486,107.90354), 
-            new L.LatLng(-7.20514,107.90355), 
-            new L.LatLng(-7.20537,107.90343), 
-            new L.LatLng(-7.20604,107.90277), 
-            new L.LatLng(-7.20616,107.90264), 
-            new L.LatLng(-7.20646,107.90234), 
-            new L.LatLng(-7.20663,107.90213), 
-            new L.LatLng(-7.20669,107.90200), 
-            new L.LatLng(-7.20689,107.90171), 
-            new L.LatLng(-7.20722,107.90119), 
-            new L.LatLng(-7.20749,107.90074), 
-            new L.LatLng(-7.20813,107.89975), 
-            new L.LatLng(-7.20834,107.89942), 
-            new L.LatLng(-7.20863,107.89908), 
-            new L.LatLng(-7.20873,107.89907), 
-            new L.LatLng(-7.20888,107.89913), 
-            new L.LatLng(-7.20913,107.89913), 
-            new L.LatLng(-7.20949,107.89908), 
-            new L.LatLng(-7.21009,107.89893), 
-            new L.LatLng(-7.21078,107.89890), 
-            new L.LatLng(-7.21120,107.89894), 
-            new L.LatLng(-7.21175,107.89906), 
-            new L.LatLng(-7.21172,107.89997), 
-            new L.LatLng(-7.21168,107.90145), 
-            new L.LatLng(-7.21164,107.90198), 
-            new L.LatLng(-7.21162,107.90202), 
-            new L.LatLng(-7.21153,107.90206), 
-            new L.LatLng(-7.21148,107.90215), 
-            new L.LatLng(-7.21152,107.90225), 
-            new L.LatLng(-7.21161,107.90232), 
-            new L.LatLng(-7.21160,107.90323), 
-            new L.LatLng(-7.21157,107.90427), 
-            new L.LatLng(-7.21153,107.90527), 
-            new L.LatLng(-7.21151,107.90587), 
-            new L.LatLng(-7.21146,107.90618), 
-            new L.LatLng(-7.21145,107.90646), 
-            new L.LatLng(-7.21157,107.90713), 
-            new L.LatLng(-7.21174,107.90796), 
-            new L.LatLng(-7.21189,107.90861), 
-            new L.LatLng(-7.21236,107.90971), 
-            new L.LatLng(-7.21250,107.90996), 
-            new L.LatLng(-7.21264,107.91030), 
-            new L.LatLng(-7.21280,107.91087), 
-            new L.LatLng(-7.21321,107.91176), 
-            new L.LatLng(-7.21361,107.91262), 
-            new L.LatLng(-7.21422,107.91340), 
-            new L.LatLng(-7.21479,107.91402), 
-            new L.LatLng(-7.21545,107.91467), 
-            new L.LatLng(-7.21561,107.91476), 
-            new L.LatLng(-7.21591,107.91488), 
-            new L.LatLng(-7.21627,107.91496), 
-            new L.LatLng(-7.21701,107.91510), 
-            new L.LatLng(-7.21794,107.91533), 
-            new L.LatLng(-7.21844,107.91544), 
-            new L.LatLng(-7.21969,107.91539), 
-            new L.LatLng(-7.21995,107.91542), 
-            new L.LatLng(-7.22027,107.91557), 
-            new L.LatLng(-7.22062,107.91583), 
-            new L.LatLng(-7.22061,107.91604), 
-            new L.LatLng(-7.22050,107.91633), 
-            new L.LatLng(-7.22051,107.91649), 
-            new L.LatLng(-7.22067,107.91673), 
-            new L.LatLng(-7.22129,107.91705), 
-            new L.LatLng(-7.22271,107.91771), 
-            new L.LatLng(-7.22325,107.91800), 
-            new L.LatLng(-7.22419,107.91836),
-       ]
-   ];
+        <?php 
+            foreach ($angkot as $row=> $a):
+                $rute=query('SELECT * FROM rute WHERE id_trayek ='.$a['id_trayek']);
+        ?>      
+            [
+                <?php 
+                    foreach ($rute as $row=> $b):
+                ?>
+                    new L.LatLng(<?=$b['longtud']; ?>,<?=$b['latud']; ?>),
+                <?php
+                    endforeach;
+                ?>
+            ],
+        <?php 
+            endforeach;
+         ?>
+    ];
 
 
     var polylineOptions=[
@@ -195,4 +87,14 @@
 
     // zoom the map to the polyline
     map.fitBounds(polyline.getBounds());
+
+    //buat MAKKER
+    // var marker = L.map('map').setView([-7.208380, 107.815191], 13);
+    // .addTo(map);
+    // var lokasi = [
+    // {
+    //     "nama tempat" : "nam tempat",
+
+    // }]
+
 </script>
