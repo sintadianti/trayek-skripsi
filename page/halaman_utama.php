@@ -2,22 +2,22 @@
   <div class="col-sm-12">
     <div class="widget-infoblock wi-large m-b-30" style="background-image: url(img/010.jpg)">
       <div class="wi-bg bg-success"></div>
-        <a href="#">
-          <div class="wi-content-top p-a-30">
-            <div class="wi-icon">
-              <i class="zmdi zmdi-pin"></i>
-            </div>
+      <a href="#">
+        <div class="wi-content-top p-a-30">
+          <div class="wi-icon">
+            <i class="zmdi zmdi-pin"></i>
           </div>
-          <div class="wi-content-bottom p-a-30">
+        </div>
+        <div class="wi-content-bottom p-a-30">
           <!--<div class="wi-tag">
           <span class="label label-danger">News</span>
-          </div>-->
-          <div class="wi-title">Dinas Perhubungan Kabupaten Garut</div>
-          <div class="wi-text">Informasi seputar trayek angkutn kota (angkot), mulai dari informasi trayek sampai dengan informasi angkutan.</div>
-          </div>
-        </a>
-    </div>
+        </div>-->
+        <div class="wi-title">Dinas Perhubungan Kabupaten Garut</div>
+        <div class="wi-text">Informasi seputar trayek angkutn kota (angkot), mulai dari informasi trayek sampai dengan informasi angkutan.</div>
+      </div>
+    </a>
   </div>
+</div>
 </div>
 <!--<div class="bd-example">
   <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">

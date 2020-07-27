@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 16 Jul 2020 pada 00.46
+-- Waktu pembuatan: 27 Jul 2020 pada 02.31
 -- Versi server: 10.1.31-MariaDB
 -- Versi PHP: 5.6.35
 
@@ -46,12 +46,16 @@ CREATE TABLE `angkot` (
 --
 
 INSERT INTO `angkot` (`id_trayek`, `trayek`, `jalur_angkot`, `warna_angkot`, `ongkos1`, `titik_awal`, `titik_akhir`, `jalur_masuk`, `jalur_keluar`, `gambar`) VALUES
-(1, '01 (Jalur Masuk)', 'Sukaregang - Terminal Guntur', 'Hijau', 'Rp. 5000,-', 'Simpang Lima', 'Terminal Guntur', 'Sukaregang - Jln. A. Yani - Jln. Bratayudha - Sukadana - Jln. Pasundan - Jln. Papandayan - Maktal Jln. Cimanuk - Bunderan Jayaraga - Jln. Merdeka - Jln. Guntur Melati - Jln. Guntur Sari - Terminal Guntur', 'Terminal Guntur - Jln. Guntur Melati - Jln. Guntur Indah - Jln. Merdeka - Bunderan Jayaraga - Jln. Guntur (IBC) - Sukaregang', 'img_5f0695eb480db.jpg'),
-(3, '02 (Jalur Masuk)', 'Sukadana - Terminal Guntur', 'Coklat', 'Rp. 5000,-', 'Sukadana', 'Terminal Guntur', 'Sukadana - Jln. Bratayudha - Jln. A. Yani - Sukaregang - Jln. Guntur - Jln. Perintis Kemerdekaan - Jln. Guntur Melati - Terminal Guntur', 'Terminal Guntur - Jln. Merdeka - Jln. Cimanuk - Jln. Papandayan - Jln. Kiansantang - Jln. Siliwangi - Jln. Muhammadiyah - Jln. Ranggalawe - Jln. Cikuray - Jln. Pasundan - Sukadana', 'img_5f09df195c353.jpg'),
-(6, '03 (Jalur Masuk)', 'RSU - Terminal', 'Biru', 'Rp. 5.000,-', 'RSU', 'Terminal Guntur', 'RSU - Maktal - Jln. Papandayan - Jln. Kiansantang - Jln. Dewi Sartika - Jln. A. Yani/Apotik Sari - Jln. Cimanuk - Maktal - Jln. Pembangunan/RSU - Simpang Lima - Jln. Rancabogo - Jln. Cendana - Jln. Guntur Sari - Terminal Guntur', 'Terminal Guntur - Jln. Guntur Melati - Jln. Guntur Indah - Jln. Merdeka - Jln. Pembangunan - Simpang Lima - Jln. Pembangunan/Pemda - RSU', 'img_5f09df47b5832.jpg'),
-(11, '08', 'byb', 'Kuning', 'Rp. 5.000,-', 'bayongbong', 'Terminal Guntur', 'Byb', 'Terminal', 'img_5f068d4b10ea4.jpg'),
-(12, '12', 'Karang Pawitn', 'merah', 'Rp. 5.000,-', 'Karpaw', 'Terminal Guntur', 'Karpaw', 'Terminal', 'img_5f068e9b11c5b.jpg'),
-(13, '01 (Jalur Keluar)', 'Terminal - Sukaregang', 'hijau', 'Rp. 5.000,-', 'Sukaregang', 'Terminal Guntur', 'Sukaregang', 'Terminal', 'img_5f0695d641c10.jpg');
+(1, '01 (Jalur Masuk)', 'Sukaregang - Terminal Guntur', 'Hijau', 'Rp. 5000,-', 'Sukaregang', 'Terminal Guntur', 'Sukaregang - Jln. A. Yani - Jln. Bratayudha - Sukadana - Jln. Pasundan - Jln. Papandayan - Maktal Jln. Cimanuk - Bunderan Jayaraga - Jln. Merdeka - Jln. Guntur Melati - Jln. Guntur Sari - Terminal Guntur', 'Terminal Guntur - Jln. Guntur Melati - Jln. Guntur Indah - Jln. Merdeka - Bunderan Jayaraga - Jln. Guntur (IBC) - Sukaregang', 'img_5f1d36663b6cb.jpg'),
+(3, '02 (Jalur Masuk)', 'Sukadana - Terminal Guntur', 'Coklat', 'Rp. 5000,-', 'Sukadana', 'Terminal Guntur', 'Sukadana - Jln. Bratayudha - Jln. A. Yani - Sukaregang - Jln. Guntur - Jln. Perintis Kemerdekaan - Jln. Guntur Melati - Terminal Guntur', 'Terminal Guntur - Jln. Merdeka - Jln. Cimanuk - Jln. Papandayan - Jln. Kiansantang - Jln. Siliwangi - Jln. Muhammadiyah - Jln. Ranggalawe - Jln. Cikuray - Jln. Pasundan - Sukadana', 'img_5f1c358e23f61.jpg'),
+(6, '03 (Jalur Masuk)', 'RSU - Terminal', 'Biru', 'Rp. 5.000,-', 'RSU', 'Terminal Guntur', 'RSU - Maktal - Jln. Papandayan - Jln. Kiansantang - Jln. Dewi Sartika - Jln. A. Yani/Apotik Sari - Jln. Cimanuk - Maktal - Jln. Pembangunan/RSU - Simpang Lima - Jln. Rancabogo - Jln. Cendana - Jln. Guntur Sari - Terminal Guntur', 'Terminal Guntur - Jln. Guntur Melati - Jln. Guntur Indah - Jln. Merdeka - Jln. Pembangunan - Simpang Lima - Jln. Pembangunan/Pemda - RSU', 'img_5f1c3682a3bb1.jpg'),
+(14, '04 (Jalur Masuk)', 'Cipanas - Terminal Guntur', 'Coklat Muda', 'Rp. 5.000,-', 'Cipanas', 'Terminal Guntur', 'Cipanas - Jl. Panday - Jl. Otista - Jl. Cimanuk - Jl. Pajajaran - Jl. Kiansantang - Jl. Dewi Sartika - Jl. Pramuka - Jl. Perintis Kemerdekaan - Jl. Guntur Sari - Terminal Guntur', 'Terminal Guntur - Jl. Guntur Melati - Jl. Guntur Indah - Jl. Merdeka - Jl. Cimanuk - Jl. Otista - Jl. Panday - Jl. Cipanas', 'img_5f1d33bf00e31.jpg'),
+(15, '05 (Jalur Masuk)', 'Leuwigoong - Terminal Guntur', 'Orange', 'Rp. 5.000,-', 'Leuwigoong', 'Terminal Guntur', 'Leuwigoong - Banyuresmi - Jl. Merdeka - Jl. Guntur Cendana - Jl. Guntur Sari - Terminal Guntur', 'Terminal Guntur - Jl. Guntur Melati - Jl. Guntur Indah - jl. Merdeka - Banyuresmi - Leuwigoong', 'img_5f1d34e17e1ea.jpg'),
+(16, '01 (Jalur Keluar)', 'Terminal Guntur - Sukaregang', 'Hijau', 'Rp. 5.000,-', 'Sukaregang', 'Terminal Guntur', 'Sukaregang - Jln. A. Yani - Jln. Bratayudha - Sukadana - Jln. Pasundan - Jln. Papandayan - Maktal Jln. Cimanuk - Bunderan Jayaraga - Jln. Merdeka - Jln. Guntur Melati - Jln. Guntur Sari - Terminal Guntur', 'Terminal Guntur - Jln. Guntur Melati - Jln. Guntur Indah - Jln. Merdeka - Bunderan Jayaraga - Jln. Guntur (IBC) - Sukaregang', 'img_5f1d367f9924a.jpg'),
+(17, '02 (Jalur Keluar)', 'Terminal Guntur - Sukadana ', 'Coklat', 'Rp. 5.000,-', 'Sukadana', 'Terminal Guntur', 'Sukadana - Jln. Bratayudha - Jln. A. Yani - Sukaregang - Jln. Guntur - Jln. Perintis Kemerdekaan - Jln. Guntur Melati - Terminal Guntur', 'Terminal Guntur - Jln. Merdeka - Jln. Cimanuk - Jln. Papandayan - Jln. Kiansantang - Jln. Siliwangi - Jln. Muhammadiyah - Jln. Ranggalawe - Jln. Cikuray - Jln. Pasundan - Sukadana', 'img_5f1d375c3261b.jpg'),
+(18, '03 (Jalur keluar)', 'Terminal - RSU ', 'Biru', 'Rp. 5.000,-', 'RSU', 'Terminal Guntur', 'RSU - Maktal - Jln. Papandayan - Jln. Kiansantang - Jln. Dewi Sartika - Jln. A. Yani/Apotik Sari - Jln. Cimanuk - Maktal - Jln. Pembangunan/RSU - Simpang Lima - Jln. Rancabogo - Jln. Cendana - Jln. Guntur Sari - Terminal Guntur', 'Terminal Guntur - Jln. Guntur Melati - Jln. Guntur Indah - Jln. Merdeka - Jln. Pembangunan - Simpang Lima - Jln. Pembangunan/Pemda - RSU', 'img_5f1d3737878f2.jpg'),
+(19, '04 (Jalur Keluar)', 'Terminal Guntur - Cipanas ', 'Coklat Muda', 'Rp. 5.000,-', 'Cipanas', 'Terminal Guntur', 'Cipanas - Jl. Panday - Jl. Otista - Jl. Cimanuk - Jl. Pajajaran - Jl. Kiansantang - Jl. Dewi Sartika - Jl. Pramuka - Jl. Perintis Kemerdekaan - Jl. Guntur Sari - Terminal Guntur', 'Terminal Guntur - Jl. Guntur Melati - Jl. Guntur Indah - Jl. Merdeka - Jl. Cimanuk - Jl. Otista - Jl. Panday - Jl. Cipanas', 'img_5f1d37f734aa2.jpg'),
+(20, '05 (Jalur Keluar)', 'Terminal Guntur - Leuwigoong ', 'Orange', 'Rp. 5.000,-', 'Leuwigoong', 'Terminal Guntur', 'Leuwigoong - Banyuresmi - Jl. Merdeka - Jl. Guntur Cendana - Jl. Guntur Sari - Terminal Guntur', 'Terminal Guntur - Jl. Guntur Melati - Jl. Guntur Indah - jl. Merdeka - Banyuresmi - Leuwigoong', 'img_5f1d386b73d36.jpg');
 
 -- --------------------------------------------------------
 
@@ -78,6 +82,24 @@ INSERT INTO `fasos` (`id`, `nama_tempat`, `deskripsi`, `longtitude`, `latitude`)
 (14, 'Pasar Ciawi Tali', 'Pasar garut', '-7.198372', '107.904329'),
 (15, 'Ramayana Garut', 'Pusat perbelanjaan', '-7.210995', '107.901721'),
 (16, 'Stasiun Kereta Api Garut', 'Stasiun Kereta Api ', '-7.213489', '107.904706');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `informasi`
+--
+
+CREATE TABLE `informasi` (
+  `id` int(11) NOT NULL,
+  `deskripsi` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `informasi`
+--
+
+INSERT INTO `informasi` (`id`, `deskripsi`) VALUES
+(1, 'Aplikasi ini di buat untuk mencari angkot yang beroperasi di kabupaten Garut, sehingga masyarakat dapat dengan mudah mencari informasi trayek angkot yang dituju.');
 
 -- --------------------------------------------------------
 
@@ -314,7 +336,246 @@ INSERT INTO `rute` (`id`, `id_trayek`, `longtud`, `latud`) VALUES
 (443, 6, '-7.21772', '107.89973'),
 (444, 6, '-7.21802', '107.89977'),
 (445, 6, '-7.21956', '107.90024'),
-(446, 6, '-7.21967', '107.89978');
+(446, 6, '-7.21967', '107.89978'),
+(447, 6, '-7.22001', '107.89802'),
+(448, 6, '-7.22010', '107.89769'),
+(449, 6, '-7.22039', '107.89736'),
+(450, 6, '-7.22036', '107.89698'),
+(451, 6, '-7.22020', '107.89596'),
+(452, 6, '-7.21945', '107.89452'),
+(453, 6, '-7.21853', '107.89362'),
+(454, 6, '-7.21769', '107.89285'),
+(455, 6, '-7.21704', '107.89222'),
+(456, 6, '-7.21577', '107.89184'),
+(457, 6, '-7.21535', '107.89172'),
+(458, 6, '-7.21515', '107.89159'),
+(459, 6, '-7.21500', '107.89137'),
+(460, 6, '-7.21487', '107.89085'),
+(461, 6, '-7.21474', '107.89047'),
+(462, 6, '-7.21443', '107.89017'),
+(463, 6, '-7.21347', '107.88975'),
+(464, 6, '-7.21265', '107.88918'),
+(465, 6, '-7.21198', '107.88879'),
+(466, 6, '-7.21140', '107.88869'),
+(467, 6, '-7.21020', '107.88872'),
+(468, 6, '-7.20978', '107.88858'),
+(469, 6, '-7.20865', '107.88812'),
+(470, 6, '-7.20834', '107.88800'),
+(471, 6, '-7.20725', '107.88753'),
+(472, 6, '-7.20570', '107.88698'),
+(473, 6, '-7.20508', '107.88696'),
+(474, 6, '-7.20335', '107.88704'),
+(475, 6, '-7.20204', '107.88708'),
+(476, 6, '-7.20126', '107.88715'),
+(477, 6, '-7.20045', '107.88738'),
+(478, 6, '-7.19986', '107.88760'),
+(479, 6, '-7.19963', '107.88773'),
+(480, 6, '-7.19954', '107.88793'),
+(481, 6, '-7.19942', '107.88813'),
+(482, 6, '-7.19911', '107.88907'),
+(483, 6, '-7.19893', '107.88979'),
+(484, 6, '-7.19894', '107.89020'),
+(485, 6, '-7.19898', '107.89139'),
+(486, 6, '-7.19906', '107.89166'),
+(487, 6, '-7.19930', '107.89216'),
+(488, 6, '-7.19947', '107.89269'),
+(489, 6, '-7.19972', '107.89313'),
+(490, 6, '-7.19986', '107.89324'),
+(491, 6, '-7.20082', '107.89334'),
+(492, 6, '-7.20092', '107.89342'),
+(493, 6, '-7.20107', '107.89404'),
+(494, 6, '-7.20116', '107.89480'),
+(495, 6, '-7.20109', '107.89557'),
+(496, 6, '-7.20091', '107.89814'),
+(497, 6, '-7.20078', '107.89977'),
+(498, 6, '-7.20070', '107.90080'),
+(499, 6, '-7.20059', '107.90211'),
+(500, 6, '-7.20059', '107.90279'),
+(501, 6, '-7.19874', '107.90312'),
+(502, 6, '-7.19799', '107.90310'),
+(503, 6, '-7.19757', '107.90316'),
+(504, 6, '-7.19792', '107.90425'),
+(505, 6, '-7.19827', '107.90578'),
+(506, 6, '-7.19851', '107.90672'),
+(507, 6, '-7.19873', '107.90667'),
+(508, 6, '-7.19956', '107.90660'),
+(509, 6, '-7.20008', '107.90653'),
+(510, 6, '-7.20001', '107.90621'),
+(511, 6, '-7.20017', '107.90621'),
+(512, 6, '-7.20029', '107.90626'),
+(513, 14, '-7.17958', '107.87436'),
+(514, 14, '-7.17963', '107.87444'),
+(515, 14, '-7.18019', '107.87466'),
+(516, 14, '-7.18058', '107.87487'),
+(517, 14, '-7.18078', '107.87502'),
+(518, 14, '-7.18098', '107.87509'),
+(519, 14, '-7.18114', '107.87519'),
+(520, 14, '-7.18124', '107.87546'),
+(521, 14, '-7.18128', '107.87590'),
+(522, 14, '-7.18136', '107.87638'),
+(523, 14, '-7.18140', '107.87721'),
+(524, 14, '-7.18157', '107.87752'),
+(525, 14, '-7.18183', '107.87808'),
+(526, 14, '-7.18188', '107.87841'),
+(527, 14, '-7.18194', '107.87857'),
+(528, 14, '-7.18261', '107.87914'),
+(529, 14, '-7.18288', '107.87948'),
+(530, 14, '-7.18301', '107.87978'),
+(531, 14, '-7.18341', '107.88166'),
+(532, 14, '-7.18370', '107.88274'),
+(533, 14, '-7.18390', '107.88291'),
+(534, 14, '-7.18423', '107.88309'),
+(535, 14, '-7.18450', '107.88314'),
+(536, 14, '-7.18465', '107.88324'),
+(537, 14, '-7.18480', '107.88345'),
+(538, 14, '-7.18506', '107.88398'),
+(539, 14, '-7.18533', '107.88427'),
+(540, 14, '-7.18558', '107.88445'),
+(541, 14, '-7.18586', '107.88500'),
+(542, 14, '-7.18590', '107.88518'),
+(543, 14, '-7.18577', '107.88544'),
+(544, 16, '-7.20028', '107.90626'),
+(545, 16, '-7.20018', '107.90621'),
+(546, 16, '-7.20002', '107.90621'),
+(547, 16, '-7.19986', '107.90555'),
+(548, 16, '-7.19962', '107.90560'),
+(549, 16, '-7.19941', '107.90562'),
+(550, 16, '-7.19910', '107.90564'),
+(551, 16, '-7.19896', '107.90488'),
+(552, 16, '-7.19882', '107.90428'),
+(553, 16, '-7.19879', '107.90413'),
+(554, 16, '-7.19871', '107.90312'),
+(555, 16, '-7.19970', '107.90294'),
+(556, 16, '-7.20063', '107.90278'),
+(557, 16, '-7.20108', '107.90289'),
+(558, 16, '-7.20157', '107.90304'),
+(559, 16, '-7.20229', '107.90327'),
+(560, 16, '-7.20272', '107.90347'),
+(561, 16, '-7.20297', '107.90351'),
+(562, 16, '-7.20364', '107.90342'),
+(563, 16, '-7.20415', '107.90349'),
+(564, 16, '-7.20486', '107.90354'),
+(565, 16, '-7.20514', '107.90355'),
+(566, 16, '-7.20537', '107.90343'),
+(567, 16, '-7.20604', '107.90277'),
+(568, 16, '-7.20616', '107.90264'),
+(569, 16, '-7.20646', '107.90234'),
+(570, 16, '-7.20663', '107.90213'),
+(571, 16, '-7.20669', '107.90200'),
+(572, 16, '-7.20689', '107.90171'),
+(573, 16, '-7.20722', '107.90119'),
+(574, 16, '-7.20749', '107.90074'),
+(575, 16, '-7.20813', '107.89975'),
+(576, 16, '-7.20834', '107.89942'),
+(577, 16, '-7.20863', '107.89908'),
+(578, 16, '-7.20873', '107.89907'),
+(579, 16, '-7.20888', '107.89913'),
+(580, 16, '-7.20913', '107.89913'),
+(581, 16, '-7.20949', '107.89908'),
+(582, 16, '-7.21009', '107.89893'),
+(583, 16, '-7.21078', '107.89890'),
+(584, 16, '-7.21120', '107.89894'),
+(585, 16, '-7.21175', '107.89906'),
+(586, 16, '-7.21172', '107.89997'),
+(587, 16, '-7.21168', '107.90145'),
+(588, 16, '-7.21164', '107.90198'),
+(589, 16, '-7.21162', '107.90202'),
+(590, 16, '-7.21153', '107.90206'),
+(591, 16, '-7.21148', '107.90215'),
+(592, 16, '-7.21152', '107.90225'),
+(593, 16, '-7.21161', '107.90232'),
+(594, 16, '-7.21160', '107.90323'),
+(595, 16, '-7.21157', '107.90427'),
+(596, 16, '-7.21153', '107.90527'),
+(597, 16, '-7.21151', '107.90587'),
+(598, 16, '-7.21146', '107.90618'),
+(599, 16, '-7.21145', '107.90646'),
+(600, 16, '-7.21157', '107.90713'),
+(601, 16, '-7.21174', '107.90796'),
+(602, 16, '-7.21189', '107.90861'),
+(603, 16, '-7.21236', '107.90971'),
+(604, 16, '-7.21250', '107.90996'),
+(605, 16, '-7.21264', '107.91030'),
+(606, 16, '-7.21280', '107.91087'),
+(607, 16, '-7.21321', '107.91176'),
+(608, 16, '-7.21361', '107.91262'),
+(609, 16, '-7.21422', '107.91340'),
+(610, 16, '-7.21479', '107.91402'),
+(611, 16, '-7.21545', '107.91467'),
+(612, 16, '-7.21561', '107.91476'),
+(613, 16, '-7.21591', '107.91488'),
+(614, 16, '-7.21627', '107.91496'),
+(615, 16, '-7.21701', '107.91510'),
+(616, 16, '-7.21794', '107.91533'),
+(617, 16, '-7.21844', '107.91544'),
+(618, 16, '-7.21969', '107.91539'),
+(619, 16, '-7.21995', '107.91542'),
+(620, 16, '-7.22027', '107.91557'),
+(621, 16, '-7.22062', '107.91583'),
+(622, 16, '-7.22061', '107.91604'),
+(623, 16, '-7.22050', '107.91633'),
+(624, 16, '-7.22051', '107.91649'),
+(625, 16, '-7.22067', '107.91673'),
+(626, 16, '-7.22129', '107.91705'),
+(627, 16, '-7.22271', '107.91771'),
+(628, 16, '-7.22325', '107.91800'),
+(629, 16, '-7.22419', '107.91836'),
+(630, 17, '-7.20028', '107.90626'),
+(631, 17, '-7.20017', '107.90621'),
+(632, 17, '-7.20001', '107.90621'),
+(633, 17, '-7.19986', '107.90555'),
+(634, 17, '-7.20086', '107.90539'),
+(635, 17, '-7.20180', '107.90531'),
+(636, 17, '-7.20280', '107.90526'),
+(637, 17, '-7.20261', '107.90395'),
+(638, 17, '-7.20269', '107.90346'),
+(639, 17, '-7.20288', '107.90350'),
+(640, 17, '-7.20319', '107.90349'),
+(641, 17, '-7.20362', '107.90343'),
+(642, 17, '-7.20415', '107.90348'),
+(643, 17, '-7.20503', '107.90356'),
+(644, 17, '-7.20531', '107.90348'),
+(645, 17, '-7.20617', '107.90264'),
+(646, 17, '-7.20661', '107.90217'),
+(647, 17, '-7.20670', '107.90198'),
+(648, 17, '-7.20726', '107.90114'),
+(649, 17, '-7.20747', '107.90076'),
+(650, 17, '-7.20834', '107.89943'),
+(651, 17, '-7.20866', '107.89905'),
+(652, 17, '-7.20894', '107.89913'),
+(653, 17, '-7.20937', '107.89910'),
+(654, 17, '-7.20999', '107.89894'),
+(655, 17, '-7.21082', '107.89889'),
+(656, 17, '-7.21181', '107.89907'),
+(657, 17, '-7.21416', '107.89922'),
+(658, 17, '-7.21675', '107.89938'),
+(659, 17, '-7.21782', '107.89976'),
+(660, 17, '-7.21965', '107.90028'),
+(661, 17, '-7.21963', '107.90042'),
+(662, 17, '-7.21984', '107.90146'),
+(663, 17, '-7.21851', '107.90158'),
+(664, 17, '-7.21737', '107.90167'),
+(665, 17, '-7.21680', '107.90174'),
+(666, 17, '-7.21681', '107.90278'),
+(667, 17, '-7.21682', '107.90392'),
+(668, 17, '-7.21770', '107.90384'),
+(669, 17, '-7.21866', '107.90375'),
+(670, 17, '-7.21867', '107.90460'),
+(671, 17, '-7.21918', '107.90456'),
+(672, 17, '-7.22043', '107.90439'),
+(673, 17, '-7.22105', '107.90432'),
+(674, 17, '-7.22120', '107.90434'),
+(675, 17, '-7.22241', '107.90491'),
+(676, 17, '-7.22312', '107.90519'),
+(677, 17, '-7.22359', '107.90532'),
+(678, 17, '-7.22441', '107.90546'),
+(679, 17, '-7.22568', '107.90564'),
+(680, 17, '-7.22717', ',107.90583'),
+(681, 17, '-7.22717', '107.90583'),
+(682, 17, '-7.22777', '107.90590'),
+(683, 17, '-7.22806', '107.90602'),
+(684, 17, '-7.22866', '107.90645'),
+(685, 17, '-7.22882', '107.90665');
 
 -- --------------------------------------------------------
 
@@ -347,9 +608,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `nama`, `username`, `password`) VALUES
-(1, 'sinaaa a', 'sintadianti', '321'),
-(2, 'siti', 'sitiii', '333'),
-(13, 'ty0', 'tyo', '$2y$10$9zTuFZtPt3wKS5VBBTQ7E.fMGp9Aglj6CkDan0NwzIMDALNYz1Gl.');
+(13, 'ty0', 'tyo', '$2y$10$9zTuFZtPt3wKS5VBBTQ7E.fMGp9Aglj6CkDan0NwzIMDALNYz1Gl.'),
+(14, 'sinta dianti', 'sintaadianti', '$2y$10$b5VxYzSDd78sRJ0hdYM21.lfCob7xRs3d71.Bin1Tpo24AcEtwlna'),
+(15, 'Dina Nurdinah', 'dinaND', '$2y$10$svZ3ZoK5eNLDABhKgZf2yecXBmOAbyMOVQvzsKfNZW43xJQ5ljBAq');
 
 --
 -- Indexes for dumped tables
@@ -365,6 +626,12 @@ ALTER TABLE `angkot`
 -- Indeks untuk tabel `fasos`
 --
 ALTER TABLE `fasos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `informasi`
+--
+ALTER TABLE `informasi`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -394,7 +661,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `angkot`
 --
 ALTER TABLE `angkot`
-  MODIFY `id_trayek` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_trayek` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT untuk tabel `fasos`
@@ -403,10 +670,16 @@ ALTER TABLE `fasos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
+-- AUTO_INCREMENT untuk tabel `informasi`
+--
+ALTER TABLE `informasi`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT untuk tabel `rute`
 --
 ALTER TABLE `rute`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=447;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=686;
 
 --
 -- AUTO_INCREMENT untuk tabel `setting`
@@ -418,7 +691,7 @@ ALTER TABLE `setting`
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)

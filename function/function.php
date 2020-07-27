@@ -237,12 +237,36 @@ function editAdmin($data){
     var_dump($_POST);
 
     return mysqli_affected_rows($conn);
-    
-
 }
+
 function hapusUser($id){
     global $conn;
     mysqli_query($conn,"DELETE FROM user WHERE id=$id");
+    
+    return mysqli_affected_rows($conn);
+}
+
+function editInfo($data){
+    global $conn;
+    // ambil data dari tiap elemen data form
+    $id = $data["id"];
+    $deskripsi=htmlspecialchars($data["deskripsi"]);
+
+
+    $query = "UPDATE  informasi SET 
+
+                deskripsi = '$deskripsi' 
+
+                WHERE id = '$id'
+                ";
+    mysqli_query($conn, $query);
+    var_dump($_POST);
+
+    return mysqli_affected_rows($conn);
+}
+function hapusInfo($id){
+    global $conn;
+    mysqli_query($conn,"DELETE FROM informasi WHERE id=$id");
     
     return mysqli_affected_rows($conn);
 }
