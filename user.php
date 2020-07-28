@@ -61,11 +61,11 @@ $fasos = query("SELECT * FROM fasos ");
         <div class="panel panel-default">
             <div class="panel-body">
                 <ul class="nav nav-tabs nav-tabs-custom nav-justified m-b-15">
-                    <li class="active">
+                    <li>
                         <a href="#tab-9" role="tab" data-toggle="tab">
                             <i class="zmdi zmdi-home"></i> Home</a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="#peta" role="tab" data-toggle="tab">
                             <i class="zmdi zmdi-pin"></i>Peta Trayek</a>
                     </li>
@@ -79,10 +79,10 @@ $fasos = query("SELECT * FROM fasos ");
                     </li>
                 </ul>
                 <div class="tab-content">
-                    <div role="tabpanel" class="tab-pane fade in active" id="tab-9">
+                    <div role="tabpanel" class="tab-pane fade " id="tab-9">
                         <h1>didie</h1>
                     </div>
-                    <div role="tabpanel" class="tab-pane fade " id="peta">
+                    <div role="tabpanel" class="tab-pane fade in active" id="peta">
 
                         <div class="row">
                             <div class="col-lg-12">
