@@ -77,7 +77,7 @@ $fasos = query("SELECT * FROM fasos ");
                             <h2>Peta Trayek Angkutan Kota (AngKot) Kabupaten Garut</h2>
                         </center>
                         <div class="row">
-                            <div class="col-lg-3 ">
+                            <div class="col-lg-3 pull-right">
                                 <label>Pilih trayek</label>
                                 <select class="form-control select2">
                                     <option>--Pilih Trayek--</option>
