@@ -1,10 +1,9 @@
-
 <?php
 session_start();
 
-if(isset($_SESSION["login"])){
-  header("Location: index.php?page=halaman_utama");
-  exit;
+if (isset($_SESSION["login"])) {
+    header("Location: index.php?page=halaman_utama");
+    exit;
 }
 
 require 'function/function.php';
@@ -62,154 +61,161 @@ $fasos = query("SELECT * FROM fasos ");
         <div class="panel panel-default">
             <div class="panel-body">
                 <ul class="nav nav-tabs nav-tabs-custom nav-justified m-b-15">
-
-                    <a href="#peta" role="tab" data-toggle="tab">
-                        <i class="zmdi zmdi-pin"></i>Peta Trayek</a>
+                    <li class="active">
+                        <a href="#tab-9" role="tab" data-toggle="tab">
+                            <i class="zmdi zmdi-home"></i> Home</a>
+                    </li>
+                    <li>
+                        <a href="#peta" role="tab" data-toggle="tab">
+                            <i class="zmdi zmdi-pin"></i>Peta Trayek</a>
                     </li>
                     <li>
                         <a href="#angkot" role="tab" data-toggle="tab">
                             <i class="zmdi zmdi-directions-car"></i> Informasi Angkutan Umum</a>
-                        </li>
-                        <li>
-                            <a href="#info" role="tab" data-toggle="tab">
-                                <i class="zmdi zmdi-info"></i> Informasi Aplikasi</a>
-                            </li>
-                        </ul>
-                        <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane fade in " id="peta">
+                    </li>
+                    <li>
+                        <a href="#info" role="tab" data-toggle="tab">
+                            <i class="zmdi zmdi-info"></i> Informasi Aplikasi</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade in active" id="tab-9">
+                        <h1>didie</h1>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade " id="peta">
+
+                        <div class="row">
+                            <div class="col-lg-12">
                                 <center>
                                     <h2>Peta Trayek Angkutan Kota (AngKot) Kabupaten Garut</h2>
                                 </center>
-                                <div class="row">
-                                    <div class="col-lg-3 pull-right">
-                                        <label>Pilih trayek</label>
-                                        <select class="form-control select2">
-                                            <option>--Pilih Trayek--</option>
-                                            <option value="all">Semua</option>
-                                            <?php foreach ($angkot_aja as $data) : ?>
-                                                <option value="<?= $data['id_trayek'] ?>"><?= $data['trayek'] ?></option>
-                                            <?php endforeach ?>
-                                        </select>
-                                    </div>
-
-                                </div>
-                                <div id="map" style="width: 100%; height: 50em; display: block; position:relative"></div>
-
-
                             </div>
-                            
-                            <div role="tabpanel" class="tab-pane fade" id="angkot">
-                                <?php
-                                $angkot = query("SELECT * FROM angkot");
-                                ?>
-                                <center>
-                                    <h3 class="title-5 m-b-35">Informasi Angkutan Kota (Angkot)</h3>
-                                    <p class="help-block">
-                                        <small>Informasi mengenai angkutan kota (angkot) yang beroperasi di Kabupaten Garut </small>
-                                    </p>
-                                </center>
-                                <hr>
-                                <?php
-                                foreach ($angkot as $row) :
-                                    ?>
-                                    <div class="col-md-4 col-sm-6">
-                                        <div class="catalog-products">
-                                            <div class="c-product">
-                                                <a class="cp-img" style="background-image: url(img/<?= $row['gambar'] ?>)" href="#">
-                                                </a>
-                                                <!-- <img src="img/" alt=""> -->
-                                                <div class="cp-content">
+                            <div class="col-lg-3 pull-right">
+                                <label>Pilih trayek</label>
+                                <select class="form-control select2" style="width: 100%;">
+                                    <option>--Pilih Trayek--</option>
+                                    <option value="all">Semua</option>
+                                    <?php foreach ($angkot_aja as $data) : ?>
+                                        <option value="<?= $data['id_trayek'] ?>"><?= $data['trayek'] ?></option>
+                                    <?php endforeach ?>
+                                </select>
+                            </div>
 
-                                                    <div class="cp-title"><?= $row['trayek'] ?></div>
-                                                    <a href="detail.php?id_trayek=<?= $row["id_trayek"]; ?>" type="button" class="btn btn-success m-w-120">Detail Angkot</a>
-                                                </div>
-                                            </div>
+                        </div>
+                        <div id="map" style="width: 100%; height: 50em; display: block; position:relative"></div>
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane fade" id="angkot">
+                        <?php
+                        $angkot = query("SELECT * FROM angkot");
+                        ?>
+                        <center>
+                            <h3 class="title-5 m-b-35">Informasi Angkutan Kota (Angkot)</h3>
+                            <p class="help-block">
+                                <small>Informasi mengenai angkutan kota (angkot) yang beroperasi di Kabupaten Garut </small>
+                            </p>
+                        </center>
+                        <hr>
+                        <?php
+                        foreach ($angkot as $row) :
+                        ?>
+                            <div class="col-md-4 col-sm-6">
+                                <div class="catalog-products">
+                                    <div class="c-product">
+                                        <a class="cp-img" style="background-image: url(img/<?= $row['gambar'] ?>)" href="#">
+                                        </a>
+                                        <!-- <img src="img/" alt=""> -->
+                                        <div class="cp-content">
+
+                                            <div class="cp-title"><?= $row['trayek'] ?></div>
+                                            <a href="detail.php?id_trayek=<?= $row["id_trayek"]; ?>" type="button" class="btn btn-success m-w-120">Detail Angkot</a>
                                         </div>
                                     </div>
-                                    <?php
-                                endforeach;
-                                ?>
-
-
+                                </div>
                             </div>
-                            <div role="tabpanel" class="tab-pane fade" id="info">
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <script src="js/vendor.min.js"></script>
-                <script src="js/cosmos.min.js"></script>
-                <script src="js/application.min.js"></script>
-
-                <script>
-                    $('.select2').select2();
-                    $(".select2").change(function() {
-                        value = $(this).val();
-                        document.location.href = 'user.php?id_trayek=' + value;
-                    });
-                </script>
-                <script>
-                    var map = L.map('map').setView([-7.20932, 107.91746], 13);
-
-                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                    }).addTo(map);
-
-
-
-                    <?php
-                    foreach ($fasos as $row => $fas) :
-                        ?>
-                        L.marker([<?= $fas['longtitude'] ?>, <?= $fas['latitude'] ?>]).addTo(map)
-                        .bindPopup("Tempat : <b><?= $fas['nama_tempat'] ?></b> </br> Desk: <?= $fas['deskripsi'] ?>")
-                        .openPopup();
                         <?php
-                    endforeach;
-                    ?>
-                    var pp = [
-                    <?php
-                    foreach ($angkot as $row => $a) :
-                        $rute = query('SELECT * FROM rute WHERE id_trayek =' . $a['id_trayek']);
-                        ?>[
-                        <?php
-                        foreach ($rute as $row => $b) :
-                            ?> new L.LatLng(<?= $b['longtud']; ?>, <?= $b['latud']; ?>),
-                            <?php
                         endforeach;
                         ?>
-                        ],
+
+
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="info">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/vendor.min.js"></script>
+        <script src="js/cosmos.min.js"></script>
+        <script src="js/application.min.js"></script>
+
+        <script>
+            $('.select2').select2();
+            $(".select2").change(function() {
+                value = $(this).val();
+                document.location.href = 'user.php?id_trayek=' + value;
+            });
+        </script>
+        <script>
+            var map = L.map('map').setView([-7.20932, 107.91746], 13);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+
+
+            <?php
+            foreach ($fasos as $row => $fas) :
+            ?>
+                L.marker([<?= $fas['longtitude'] ?>, <?= $fas['latitude'] ?>]).addTo(map)
+                    .bindPopup("Tempat : <b><?= $fas['nama_tempat'] ?></b> </br> Desk: <?= $fas['deskripsi'] ?>")
+                    .openPopup();
+            <?php
+            endforeach;
+            ?>
+            var pp = [
+                <?php
+                foreach ($angkot as $row => $a) :
+                    $rute = query('SELECT * FROM rute WHERE id_trayek =' . $a['id_trayek']);
+                ?>[
                         <?php
-                    endforeach;
-                    ?>
-                    ];
+                        foreach ($rute as $row => $b) :
+                        ?> new L.LatLng(<?= $b['longtud']; ?>, <?= $b['latud']; ?>),
+                        <?php
+                        endforeach;
+                        ?>
+                    ],
+                <?php
+                endforeach;
+                ?>
+            ];
 
 
-                    var polylineOptions = [{
-                        color: 'red',
-                        weight: 5,
-                        opacity: 0.9
-                    },
-                    {
-                        color: 'blue',
-                        weight: 5,
-                        opacity: 0.9
-                    }
-                    ];
+            var polylineOptions = [{
+                    color: 'red',
+                    weight: 5,
+                    opacity: 0.9
+                },
+                {
+                    color: 'blue',
+                    weight: 5,
+                    opacity: 0.9
+                }
+            ];
 
-                    poliline = [];
-                    for (var i = 0; i < pp.length; i++) {
-                        console.log(i)
-                        var polyline = new L.Polyline(pp[i], polylineOptions[i]);
-                        map.addLayer(polyline);
+            poliline = [];
+            for (var i = 0; i < pp.length; i++) {
+                console.log(i)
+                var polyline = new L.Polyline(pp[i], polylineOptions[i]);
+                map.addLayer(polyline);
 
-                    }
+            }
 
-                            // zoom the map to the polyline
-                            map.fitBounds(polyline.getBounds());
+            // zoom the map to the polyline
+            map.fitBounds(polyline.getBounds());
+        </script>
+</body>
 
-                        </script>
-                    </body>
-
-                    </html>
+</html>
