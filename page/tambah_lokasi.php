@@ -73,7 +73,7 @@ if(isset($_POST["tambah"])){
                 <td><?= $row['longtud'] ?></td>
                 <td><?= $row['latud'] ?></td>
                 <td>
-                  <a href="index.php?page=hapus_lokasi&id=<?= $row["id"];?>" class="item" data-toggle="tooltip" data-placement="top" title="Hapus">
+                  <a href="index.php?page=hapus_lokasi&id=<?= $row["id"];?>&id_trayek=<?= $id_trayek?>" class="item" data-toggle="tooltip" data-placement="top" title="Hapus">
                     <i class="zmdi zmdi-delete"></i></a>   
                   </td>
                 </tr>

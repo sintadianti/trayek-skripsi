@@ -31,9 +31,23 @@ $fasos=query("SELECT * FROM fasos ");
   <link rel="stylesheet" href="css/application.min.css">
   <link rel="stylesheet" href="assets/leaflet/leaflet.css">
   <script src="assets/leaflet/leaflet.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
+  <style>
+    .select2-container .select2-selection--single{
+      height:34px !important;
+    }
+    .select2-container--default .select2-selection--single{
+     border: 1px solid #ccc !important; 
+     border-radius: 0px !important; 
+   }
+
+ </style>
 </head>
 <body>
-  
+
   <div class="container">
 
     <div class="panel panel-default">
@@ -61,25 +75,26 @@ $fasos=query("SELECT * FROM fasos ");
                     <center><h2>Peta Trayek Angkutan Kota (AngKot) Kabupaten Garut</h2></center>
                     <div class="row">
                       <div class="col-lg-2 ">
-                        
+
                       </div>
-                      <div class="btn-group">
+
+                      <!-- <div class="btn-group">
                         <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Action
                         </button>
                         <div class="dropdown-menu">
                           <a href="user.php?id_trayek=all" class="dropdown-item">semua</a>
                           <?php foreach ($angkot_aja as $data): ?>
-                            
+
                             <a href="user.php?id_trayek=<?=$data['id_trayek'] ?>" class="dropdown-item"><?=$data['trayek'] ?></a>
-                            
+
                           <?php endforeach ?>
-                          
-                        </div>
+
+                        </div> -->
                       </div>
-                      
-                      
-                      
+
+
+
                     </div>
                     <div id="map" style="width: 100%; height: 50em; display: block; position:relative"></div>
 
@@ -90,7 +105,7 @@ $fasos=query("SELECT * FROM fasos ");
                         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                       }).addTo(map);
 
-                      
+
 
                       <?php 
                       foreach ($fasos as $row=> $fas):
@@ -139,7 +154,7 @@ $fasos=query("SELECT * FROM fasos ");
                         console.log(i)
                         var polyline = new L.Polyline(pp[i], polylineOptions[i]);
                         map.addLayer(polyline);
-                        
+
                       }
 
                             // zoom the map to the polyline
@@ -176,7 +191,7 @@ $fasos=query("SELECT * FROM fasos ");
                                 </a>
                                 <!-- <img src="img/" alt=""> -->
                                 <div class="cp-content">
-                                  
+
                                   <div class="cp-title"><?=$row['trayek']?></div>
                                   <a href="detail.php?id_trayek=<?= $row["id_trayek"];?>" type="button" class="btn btn-success m-w-120">Detail Angkot</a>
                                 </div>
@@ -196,19 +211,18 @@ $fasos=query("SELECT * FROM fasos ");
 
                       </div>
                     </div>
-                    
 
 
-                    
+
+
 
                   </div>
-                </div>  
-              </div>
-              
+                  
 
-              <script src="js/vendor.min.js"></script>
-              <script src="js/cosmos.min.js"></script>
-              <script src="js/application.min.js"></script>
 
-            </body>
-            </html>
+                  <script src="js/vendor.min.js"></script>
+                  <script src="js/cosmos.min.js"></script>
+                  <script src="js/application.min.js"></script>
+
+                </body>
+                </html>

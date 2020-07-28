@@ -15,14 +15,14 @@ function query($query){
 
 function tambahTrayek($data){
     global $conn;
-        $trayek=htmlspecialchars($data["trayek"]);
-        $jalur_angkot=htmlspecialchars($data["jalur_angkot"]);
-        $warna_angkot=htmlspecialchars($data["warna_angkot"]);
-        $ongkos1=htmlspecialchars($data["ongkos1"]);
-        $titik_awal=htmlspecialchars($data["titik_awal"]);
-        $titik_akhir=htmlspecialchars($data["titik_akhir"]);
-        $jalur_masuk=htmlspecialchars($data["jalur_masuk"]);
-        $jalur_keluar=htmlspecialchars($data["jalur_keluar"]);
+    $trayek=htmlspecialchars($data["trayek"]);
+    $jalur_angkot=htmlspecialchars($data["jalur_angkot"]);
+    $warna_angkot=htmlspecialchars($data["warna_angkot"]);
+    $ongkos1=htmlspecialchars($data["ongkos1"]);
+    $titik_awal=htmlspecialchars($data["titik_awal"]);
+    $titik_akhir=htmlspecialchars($data["titik_akhir"]);
+    $jalur_masuk=htmlspecialchars($data["jalur_masuk"]);
+    $jalur_keluar=htmlspecialchars($data["jalur_keluar"]);
     var_dump($data);
         //upload gambar
     $gambar =upload();
@@ -32,8 +32,8 @@ function tambahTrayek($data){
     }
     
     $query="INSERT INTO angkot
-                VALUES
-                ('','$trayek','$jalur_angkot','$warna_angkot','$ongkos1','$titik_awal','$titik_akhir','$jalur_masuk','$jalur_keluar','$gambar')";
+    VALUES
+    ('','$trayek','$jalur_angkot','$warna_angkot','$ongkos1','$titik_awal','$titik_akhir','$jalur_masuk','$jalur_keluar','$gambar')";
     mysqli_query($conn, $query);
     return mysqli_affected_rows($conn);
 }
@@ -47,8 +47,8 @@ function upload(){
     //cek apakah gambar telah di upload
     if($error===4){
         echo "<script>
-                alert('pilih gambar terlebih dahulu !!!');
-            </script>";
+        alert('pilih gambar terlebih dahulu !!!');
+        </script>";
         return false;
     }
 
@@ -59,16 +59,16 @@ function upload(){
     
     if(!in_array($extensiGambar,$extensiGambarValid)){
         echo "<script>
-                alert('yang anda upload bukan gambar');
-            </script>";
+        alert('yang anda upload bukan gambar');
+        </script>";
         return false;
     }
 
     //cek ukuran apabila ingin dibatasi
     if($ukuranFile > 1000000){
         echo "<script>
-                alert('gambar yang anda masukan terlalu besar');
-            </script>";
+        alert('gambar yang anda masukan terlalu besar');
+        </script>";
         return false;
     }
 
@@ -105,18 +105,18 @@ function editTrayek($data){
     }
     // query insert data
     $query="UPDATE angkot  SET
-                trayek='$trayek',
-                jalur_angkot='$jalur_angkot',
-                warna_angkot='$warna_angkot',
-                ongkos1='$ongkos1',
-                titik_awal='$titik_awal',
-                titik_akhir='$titik_akhir',
-                jalur_masuk='$jalur_masuk',
-                jalur_keluar='$jalur_keluar',
-                gambar='$gambar'
+    trayek='$trayek',
+    jalur_angkot='$jalur_angkot',
+    warna_angkot='$warna_angkot',
+    ongkos1='$ongkos1',
+    titik_awal='$titik_awal',
+    titik_akhir='$titik_akhir',
+    jalur_masuk='$jalur_masuk',
+    jalur_keluar='$jalur_keluar',
+    gambar='$gambar'
 
-                WHERE id_trayek= '$id_trayek'
-                ";
+    WHERE id_trayek= '$id_trayek'
+    ";
     mysqli_query($conn, $query);
     return mysqli_affected_rows($conn);
 }
@@ -133,8 +133,8 @@ function tambahLokasi($data){
     $longtud=htmlspecialchars($data["longtud"]);
     $latud=htmlspecialchars($data["latud"]);
     $query="INSERT INTO rute
-                VALUES
-                ('','$id_trayek','$longtud','$latud')";
+    VALUES
+    ('','$id_trayek','$longtud','$latud')";
     mysqli_query($conn, $query);
     return mysqli_affected_rows($conn);
 }
@@ -146,8 +146,8 @@ function tambahFasos($data){
     $longtitude=htmlspecialchars($data["longtitude"]);
     $latitude=htmlspecialchars($data["latitude"]);
     $query="INSERT INTO fasos
-                VALUES
-                ('','$nama_tempat','$deskripsi','$longtitude','$latitude')";
+    VALUES
+    ('','$nama_tempat','$deskripsi','$longtitude','$latitude')";
     mysqli_query($conn, $query);
     return mysqli_affected_rows($conn);
 }
@@ -162,14 +162,14 @@ function editFasos($data){
 
     // query insert data
     $query="UPDATE fasos SET
-                nama_tempat='$nama_tempat',
-                deskripsi='$deskripsi',
-                longtitude='$longtitude',
-                latitude='$latitude'
-                
+    nama_tempat='$nama_tempat',
+    deskripsi='$deskripsi',
+    longtitude='$longtitude',
+    latitude='$latitude'
+    
 
-                WHERE id= '$id'
-                ";
+    WHERE id= '$id'
+    ";
     mysqli_query($conn, $query);
     return mysqli_affected_rows($conn);
 }
@@ -179,6 +179,14 @@ function hapusFasos($id){
     
     return mysqli_affected_rows($conn);
 }
+
+function hapusLokasi($id){
+    global $conn;
+    mysqli_query($conn,"DELETE FROM rute WHERE id=$id");
+    
+    return mysqli_affected_rows($conn);
+}
+
 function tambahAdmin($data){
     global $conn;
     $nama=htmlspecialchars($data["nama"]);
@@ -227,12 +235,12 @@ function editAdmin($data){
 
     $query = "UPDATE  user SET 
 
-                nama = '$nama', 
-                username = '$username', 
-                password = '$password' 
+    nama = '$nama', 
+    username = '$username', 
+    password = '$password' 
 
-                WHERE id = '$id'
-                ";
+    WHERE id = '$id'
+    ";
     mysqli_query($conn, $query);
     var_dump($_POST);
 
@@ -255,10 +263,10 @@ function editInfo($data){
 
     $query = "UPDATE  informasi SET 
 
-                deskripsi = '$deskripsi' 
+    deskripsi = '$deskripsi' 
 
-                WHERE id = '$id'
-                ";
+    WHERE id = '$id'
+    ";
     mysqli_query($conn, $query);
     var_dump($_POST);
 
