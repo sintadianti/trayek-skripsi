@@ -78,7 +78,7 @@ $fasos=query("SELECT * FROM fasos ");
 
                       </div>
 
-                      <!-- <div class="btn-group">
+                      <div class="btn-group">
                         <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Action
                         </button>
@@ -90,7 +90,7 @@ $fasos=query("SELECT * FROM fasos ");
 
                           <?php endforeach ?>
 
-                        </div> -->
+                        </div>
                       </div>
 
 
