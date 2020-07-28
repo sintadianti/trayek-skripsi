@@ -2,7 +2,7 @@
 session_start();
 
 if( !isset($_SESSION["login"])){
-  header("Location: login.php");
+  header("Location: user.php?id_trayek=all");
   exit;
 }
 
@@ -27,6 +27,10 @@ $page=isset($_GET["page"])?$_GET["page"]:'dashboard';
   <link rel="stylesheet" href="css/application.min.css">
   <link rel="stylesheet" href="assets/leaflet/leaflet.css">
   <script src="assets/leaflet/leaflet.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
 </head>
 <body class="layout layout-header-fixed layout-left-sidebar-fixed">
   <div class="site-overlay"></div>

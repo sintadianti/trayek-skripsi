@@ -3,10 +3,10 @@ session_start();
 require 'function/function.php';
 // $profil= query("SELECT * FROM profil ")[0];
 // var_dump($profil);
-// if(isset($_SESSION["masuk"])){
-//     header("Location: index.php");
-//     exit;
-// }
+if(isset($_SESSION["login"])){
+  header("Location: index.php?page=halaman_utama");
+  exit;
+}
 
 if(isset($_POST["login"])){
   $username = $_POST["username"];
